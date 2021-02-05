@@ -1,7 +1,8 @@
 import React from 'react';
 import {Dimensions, StyleSheet, Text, View} from 'react-native';
-import ClockIcon from 'react-native-vector-icons/AntDesign';
-import CaretIcon from 'react-native-vector-icons/FontAwesome';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Entypo from 'react-native-vector-icons/Entypo';
 
 const HomeSearch = () => {
   return (
@@ -10,10 +11,26 @@ const HomeSearch = () => {
         <Text style={styles.input}>Where Too?</Text>
 
         <View style={styles.timeContainer}>
-          <ClockIcon name="clockcircle" size={30} color="black" />
+          <AntDesign name="clockcircle" size={30} color="black" />
           <Text>Now</Text>
-          <CaretIcon name="caret-down" size={30} color="black" />
+          <FontAwesome name="caret-down" size={30} color="black" />
         </View>
+      </View>
+
+      <View style={styles.row}>
+        <View style={styles.iconContainer}>
+          <AntDesign name="clockcircle" size={25} color="white" />
+        </View>
+
+        <Text style={styles.destination}>Spin Nightclub</Text>
+      </View>
+
+      <View style={styles.row}>
+        <View style={[styles.iconContainer, {backgroundColor: '#2B67E2'}]}>
+          <Entypo name="home" size={25} color="white" />
+        </View>
+
+        <Text style={styles.destination}>Home</Text>
       </View>
     </View>
   );
@@ -24,6 +41,7 @@ export default HomeSearch;
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
+    marginTop: 8,
   },
   inputBox: {
     backgroundColor: 'lightgrey',
@@ -32,7 +50,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     borderRadius: 5,
     width: Dimensions.get('screen').width - 20,
-    padding: 10,
+    padding: 5,
   },
   input: {
     fontSize: 20,
@@ -47,5 +65,27 @@ const styles = StyleSheet.create({
     backgroundColor: 'whitesmoke',
     padding: 10,
     // marginVertical: 10,
+  },
+  row: {
+    flexDirection: 'row',
+    borderBottomWidth: 1,
+    borderBottomColor: 'lightgrey',
+    width: Dimensions.get('screen').width,
+    backgroundColor: 'white',
+    padding: 10,
+    alignItems: 'center',
+  },
+  iconContainer: {
+    backgroundColor: 'lightgrey',
+    // width: 40,
+    padding: 8,
+    borderRadius: 20,
+    alignItems: 'center',
+  },
+
+  destination: {
+    marginLeft: 10,
+    fontSize: 16,
+    fontWeight: '600',
   },
 });

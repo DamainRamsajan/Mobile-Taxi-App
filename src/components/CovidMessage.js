@@ -8,9 +8,7 @@ const CovidMessage = () => {
       <Text style={styles.textBody}>
         Covid safety measures: Daily symptom self-assessment, Physical
         distancing - Maintain 6 feet distance from others, Stay out of crowded
-        places and avoid large groups, Use face coverings, Practice frequent
-        hand hygiene, Follow respiratory etiquette and Limit non-essential
-        travel.
+        places and avoid large groups and Use face coverings.
       </Text>
       <Text style={styles.learnMore}>Learn More..</Text>
     </View>
@@ -21,7 +19,7 @@ export default CovidMessage;
 
 const styles = StyleSheet.create({
   container: {
-    height: 200,
+    height: 160,
     backgroundColor: '#2B67E2',
     padding: 15,
     borderTopLeftRadius: 15,
