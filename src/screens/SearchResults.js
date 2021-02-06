@@ -1,10 +1,13 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import HomeMap from '../components/HomeMap';
+import TaxiTypes from '../components/TaxiTypes';
 
 const SearchResults = () => {
   return (
     <View>
-      <Text>Search Results page</Text>
+      <HomeMap />
+      <TaxiTypes />
     </View>
   );
 };
