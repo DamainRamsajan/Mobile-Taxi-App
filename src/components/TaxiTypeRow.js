@@ -5,14 +5,14 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const TaxiTypeRow = ({type}) => {
   const getImage = () => {
-    if (type.type === 'UberX') {
-      return require('../assets/images/UberX.jpeg');
+    if (type.type === 'TaxiX') {
+      return require('../assets/images/TaxiX.jpeg');
     }
     if (type.type === 'Comfort') {
       return require('../assets/images/Comfort.jpeg');
     }
-    if (type.type === 'UberXL') {
-      return require('../assets/images/UberXL.jpeg');
+    if (type.type === 'TaxiXL') {
+      return require('../assets/images/TaxiXL.jpeg');
     }
   };
 
@@ -54,13 +54,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: 10,
+    padding: 20,
     borderBottomWidth: 1,
     borderBottomColor: 'lightgrey',
   },
   carPicture: {
     width: 70,
-    height: 50,
+    height: 60,
     resizeMode: 'contain',
   },
   textContainer: {

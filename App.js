@@ -8,9 +8,9 @@ const App: () => React$Node = () => {
   return (
     <View>
       <StatusBar barStyle="dark-content" />
-      {/* <Home /> */}
+      <Home />
       {/* <DestinationSearch /> */}
-      <SearchResults />
+      {/* <SearchResults /> */}
     </View>
   );
 };

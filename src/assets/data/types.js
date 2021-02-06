@@ -1,7 +1,7 @@
 export default [
   {
     id: '0',
-    type: 'UberX',
+    type: 'TaxiX',
     price: 22,
     duration: 45,
   },
@@ -13,8 +13,8 @@ export default [
   },
   {
     id: '2',
-    type: 'UberXL',
+    type: 'TaxiXL',
     price: 36,
     duration: 27,
   },
-]
+];
