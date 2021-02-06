@@ -3,17 +3,26 @@ import {StyleSheet, Text, View, Image} from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-const TaxiTypeRow = () => {
+const TaxiTypeRow = ({type}) => {
+  const getImage = () => {
+    if (type.type === 'UberX') {
+      return require('../assets/images/UberX.jpeg');
+    }
+    if (type.type === 'Comfort') {
+      return require('../assets/images/Comfort.jpeg');
+    }
+    if (type.type === 'UberXL') {
+      return require('../assets/images/UberXL.jpeg');
+    }
+  };
+
   return (
     <View style={styles.container}>
-      <Image
-        style={styles.carPicture}
-        source={require('../assets/images/UberX.jpeg')}
-      />
+      <Image style={styles.carPicture} source={getImage()} />
 
       <View style={styles.textContainer}>
         <View style={styles.titleContainer}>
-          <Text style={styles.title}>taxi title</Text>
+          <Text style={styles.title}>{type.type}</Text>
           <Ionicons
             style={styles.plusIcon}
             name="person"
@@ -22,7 +31,7 @@ const TaxiTypeRow = () => {
           />
         </View>
 
-        <Text style={styles.time}>taxi timiing</Text>
+        <Text style={styles.time}>8:{type.duration}PM drop off </Text>
       </View>
 
       <View style={styles.priceContainer}>
@@ -32,7 +41,7 @@ const TaxiTypeRow = () => {
           size={16}
           color="green"
         />
-        <Text style={styles.price}>est. $26</Text>
+        <Text style={styles.price}>est. ${type.price}</Text>
       </View>
     </View>
   );
