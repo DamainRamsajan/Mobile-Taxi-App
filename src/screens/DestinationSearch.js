@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   Dimensions,
   SafeAreaView,
@@ -8,26 +8,48 @@ import {
   View,
 } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete';
 
 const DestinationSearch = () => {
-  const [fromText, setFromText] = useState('');
-  const [destinationText, setDestinationText] = useState('');
+  const [originPlace, setOriginPlace] = useState(null);
+  const [destinationPlace, setDestinationPlace] = useState(null);
+
+  useEffect(() => {
+    if (originPlace && destinationPlace) {
+      console.warn('redirect to results page');
+    }
+  }, [originPlace, destinationPlace]);
 
   return (
     <SafeAreaView>
       <View style={styles.container}>
-        <TextInput
-          value={fromText}
-          style={[styles.textInput, {backgroundColor: 'whitesmoke'}]}
+        <GooglePlacesAutocomplete
           placeholder="Current Location"
-          onChangeText={setFromText}
+          onPress={(data, details = null) => {
+            // 'details' is provided when fetchDetails = true
+            setOriginPlace({data, details});
+          }}
+          fetchDetails
+          styles={{textInput: styles.textInput}}
+          query={{
+            key: 'AIzaSyAC9D2fMi7jofyo9Sw3Wd9AG47FQWTLmkY',
+            language: 'en',
+          }}
         />
+
         <View style={styles.destinationContainer}>
-          <TextInput
-            value={destinationText}
-            style={styles.textInput}
-            placeholder="Where Too?"
-            onChangeText={setDestinationText}
+          <GooglePlacesAutocomplete
+            placeholder="Where Too"
+            onPress={(data, details = null) => {
+              // 'details' is provided when fetchDetails = true
+              setDestinationPlace({data, details});
+            }}
+            fetchDetails
+            styles={{textInput: styles.textInput}}
+            query={{
+              key: 'AIzaSyAC9D2fMi7jofyo9Sw3Wd9AG47FQWTLmkY',
+              language: 'en',
+            }}
           />
           <FontAwesome
             style={styles.plusIcon}
@@ -46,6 +68,7 @@ export default DestinationSearch;
 const styles = StyleSheet.create({
   container: {
     padding: 10,
+    height: '100%',
   },
   textInput: {
     height: 50,
