@@ -9,14 +9,16 @@ import {
 } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete';
+import {useNavigation} from '@react-navigation/native';
 
 const DestinationSearch = () => {
   const [originPlace, setOriginPlace] = useState(null);
   const [destinationPlace, setDestinationPlace] = useState(null);
+  const navigation = useNavigation();
 
   useEffect(() => {
     if (originPlace && destinationPlace) {
-      console.warn('redirect to results page');
+      navigation.navigate('SearchResults');
     }
   }, [originPlace, destinationPlace]);
 

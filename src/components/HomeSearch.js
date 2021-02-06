@@ -1,14 +1,18 @@
 import React from 'react';
-import {Dimensions, StyleSheet, Text, View} from 'react-native';
+import {Dimensions, Pressable, StyleSheet, Text, View} from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Entypo from 'react-native-vector-icons/Entypo';
+import {useNavigation} from '@react-navigation/native';
 
 const HomeSearch = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <View style={styles.inputBox}>
-        <Text style={styles.input}>Where Too?</Text>
+        <Pressable onPress={() => navigation.navigate('DestinationSearch')}>
+          <Text style={styles.input}>Where Too?</Text>
+        </Pressable>
 
         <View style={styles.timeContainer}>
           <AntDesign name="clockcircle" size={30} color="black" />

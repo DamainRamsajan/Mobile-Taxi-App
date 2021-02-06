@@ -17,10 +17,10 @@ export default [
     latitude: 28.456208,
     longitude: -16.259098,
   },
-  {
-    id: '3',
-    type: 'Comfort',
-    latitude: 28.454812,
-    longitude: -16.258658,
-  },
+  // {
+  //   id: '3',
+  //   type: 'Comfort',
+  //   latitude: 28.454812,
+  //   longitude: -16.258658,
+  // },
 ];
