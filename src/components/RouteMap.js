@@ -37,7 +37,7 @@ export default RouteMap;
 
 const styles = StyleSheet.create({
   container: {
-    height: 400,
+    height: 360,
     backgroundColor: '#a5abff',
     justifyContent: 'center',
     alignItems: 'center',

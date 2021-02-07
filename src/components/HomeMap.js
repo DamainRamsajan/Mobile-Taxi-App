@@ -30,7 +30,12 @@ const HomeMap = () => {
             id={car.id}
             coordinate={{latitude: car.latitude, longitude: car.longitude}}>
             <Image
-              style={{width: 70, height: 70, resizeMode: 'contain'}}
+              style={{
+                width: 70,
+                height: 70,
+                resizeMode: 'contain',
+                transform: [{rotate: `${car.heading}deg`}],
+              }}
               source={getImage(car.type)}
             />
           </Marker>
@@ -44,7 +49,7 @@ export default HomeMap;
 
 const styles = StyleSheet.create({
   container: {
-    height: 400,
+    height: 330,
     backgroundColor: '#a5abff',
     justifyContent: 'center',
     alignItems: 'center',

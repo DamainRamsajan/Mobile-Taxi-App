@@ -59,8 +59,8 @@ const styles = StyleSheet.create({
     borderBottomColor: 'lightgrey',
   },
   carPicture: {
-    width: 70,
-    height: 60,
+    width: 60,
+    height: 40,
     resizeMode: 'contain',
   },
   textContainer: {
