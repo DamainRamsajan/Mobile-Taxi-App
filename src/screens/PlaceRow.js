@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     alignItems: 'baseline',
     flexDirection: 'row',
     marginVertical: 10,
+    
   },
   iconContainer: {
     backgroundColor: '#a2a2a2',
